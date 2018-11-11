@@ -1,17 +1,15 @@
-# Spring MVC translates into RAML specification maven plugin
-Most of the current RAML tools translate previously defined RAML files into spring server side code, but most existing projects do not fully comply with the Restful API specification,
-So you need to convert existing Spring MVC project to RAML specification, need tools have a certain flexibility, generate only basic specifications include scanning  @Controller/RestController annotation generates
-The declaration of major API resource and the ability to scan Java pojo classes to generate RAML type generation will be reorganized by the developer based on these two documents,
- reducing the amount of effort required to manually write RAML specifications from scratch
- 
-[![CN doc](https://img.shields.io/badge/文档-中文版-blue.svg)](README_zh.md)
-## Plugin instructions
-### local install maven plugin
+# Spring MVC 转换为RAML规范maven plugin
+目前大部分RAML的工具都是把之前定义好的raml文件转成spring server端代码，但大多数已经存在的项目并不是完全符合Restful API规范，
+所以需要把已有的Spring MVC项目转成raml规范，需要工具具备一定的灵活性，只生成raml基本规范包括扫描@Controller/RestController注解生成
+主要api resource的声明，并可扫描Java pojo类生成raml type生成，由开发人员根据这两份文档重新整理，降低手工从头编写raml规范的工作量
+
+## 插件说明
+### 本地打包安装maven plugin
 * git clone https://github.com/iamhuzl/java2raml.git
 * mvn install
 
-### configuration maven plugin
- configuration maven pom
+### 配置maven plugin
+ 配置pom
 ```xml
 <build>
         <plugins>
@@ -53,22 +51,22 @@ The declaration of major API resource and the ability to scan Java pojo classes 
     </build>
 ```
 ### pojo2raml maven mojo
-Convert the Java Pojo class into a raml library file
-* targetClass Specify a specific class name
-* targetPackage Pojo package name
+把Java Pojo类转成raml library文件
+* targetClass 指明具体类名
+* targetPackage Pojo类包名
 ### controller2raml maven mojo
-Scan all Spring Controller classes under the package name to generate raml files
-* basePackages Package names containing Controller are separated by commas if multiple
+扫描包名下所有Spring Controller类生成raml文件
+* basePackages 包含Controller的包名，若多个则用逗号分隔
 
-### Generate the raml file
-* execute command mvn package  
-Two files are generated in the target directory
-    - project-api-definition.yaml restful api resource raml file
-    - project-api-types.yaml Java Pojo class raml library file 
+### 生成raml文件
+* 执行命令 mvn package
+在target目录会生成两个文件
+    * project-api-definition.yaml restful api resource raml file
+    * project-api-types.yaml Java Pojo class raml library file 
 
-Based on these two files, write the new raml file and import the types definition using the raml USES directive
+在这两个文件基础上编写新的raml文件，使用raml uses指令导入types定义
 
-### example
+### 示例
 ```yaml
 #%RAML 1.0
 title: Project Spring Restful Api Definition
@@ -118,17 +116,17 @@ uses:
                         type: reviewPub.WebRequest
 
 ```
- ## Use introduction of the raml tool API -designer
+ ## raml工具 api-designer使用介绍
  * npm install -g api-designer
- * Direct execution api-designer
- * Open browser and access http://localhost:3000/
+ * 直接执行命令 api-designer
+ * 浏览器访问 http://localhost:3000/
 
 ![](images/raml-example.png)
 
-## Next step
-- [ ] Generate response example
-- [ ]  supports Java Pojo custom wrap
-- [ ] Analyze the comment in the Java source and convert them to field description
+## 下一步计划
+- [ ] 生成响应示例
+- [ ] Java Pojo支持自定义wrap
+- [ ] 分析Java源码中的注释并转为字段说明
 
 
 
