@@ -31,6 +31,7 @@
         <raml.version>1.0.27</raml.version>
         <pojo-to-raml.version>1.0.4</pojo-to-raml.version>
         <maven-plugin-annotations.version>3.5</maven-plugin-annotations.version>
+        <maven.deploy.skip>false</maven.deploy.skip>
     </properties>
     <dependencies>
         <dependency>
@@ -96,6 +97,10 @@
             <plugin>
                 <artifactId>maven-plugin-plugin</artifactId>
                 <version>3.6.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

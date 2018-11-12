@@ -1,8 +1,9 @@
 # Spring MVC translates into RAML specification maven plugin
 Most of the current RAML tools translate previously defined RAML files into spring server side code, but most existing projects do not fully comply with the Restful API specification,
-So you need to convert existing Spring MVC project to RAML specification, need tools have a certain flexibility, generate only basic specifications include scanning  @Controller/RestController annotation generates
-The declaration of major API resource and the ability to scan Java pojo classes to generate RAML type generation will be reorganized by the developer based on these two documents,
- reducing the amount of effort required to manually write RAML specifications from scratch
+So you need to convert existing Spring MVC project to RAML specification, need tools have a certain flexibility,
+generate only RAML based definition file including scanning @ Controller/RestController comments generated API resource definition,
+scan the Java pojo class to generate the RAML type definition.
+The two documents are reorganized by the developer,reducing the amount of effort required to manually write RAML specifications from scratch
  
 [![CN doc](https://img.shields.io/badge/文档-中文版-blue.svg)](README_zh.md)
 ## Plugin instructions

@@ -1,7 +1,7 @@
 # Spring MVC 转换为RAML规范maven plugin
-目前大部分RAML的工具都是把之前定义好的raml文件转成spring server端代码，但大多数已经存在的项目并不是完全符合Restful API规范，
-所以需要把已有的Spring MVC项目转成raml规范，需要工具具备一定的灵活性，只生成raml基本规范包括扫描@Controller/RestController注解生成
-主要api resource的声明，并可扫描Java pojo类生成raml type生成，由开发人员根据这两份文档重新整理，降低手工从头编写raml规范的工作量
+目前大部分RAML的工具都是把之前定义好的RAML文件转成spring server端代码，但大多数已经存在的项目并不是完全符合Restful API规范，
+所以需要把已有的Spring MVC项目转成RAML规范，需要工具具备一定的灵活性，只生成RAML基础定义文件包括扫描@Controller/RestController注解生成
+主要api resource的定义，扫描Java pojo类生成RAML type定义，由开发人员根据这两份文档重新整理，降低手工从头编写RAML规范的工作量
 
 ## 插件说明
 ### 本地打包安装maven plugin
